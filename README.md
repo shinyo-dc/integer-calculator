@@ -11,4 +11,4 @@ A basic integer calculator on Android, supports these operations:
 Built using my knowledge about Android Studio learned from the IoT's course on HCMUT.
 
 Preview:
-![Preview]("https://files.catbox.moe/8mrp62.jpg")
+![Preview](https://files.catbox.moe/8mrp62.jpg)

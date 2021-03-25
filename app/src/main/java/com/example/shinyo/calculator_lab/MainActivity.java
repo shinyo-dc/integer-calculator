@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             long res = (long)A + (long)B;
             txtRes.setText(res + "");
         } catch (NumberFormatException e) {
-            txtRes.setText("The number is invalid, please re-enter");
+            txtRes.setText("INVALID INPUT");
         }
     }
     private void intSub() {
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             long res = (long)A - (long)B;
             txtRes.setText(res + "");
         } catch (NumberFormatException e) {
-            txtRes.setText("The number is invalid, please re-enter");
+            txtRes.setText("INVALID INPUT");
         }
     }
     private void intMul() {
@@ -96,33 +96,39 @@ public class MainActivity extends AppCompatActivity {
             long res = (long)A * (long)B;
             txtRes.setText(res + "");
         } catch (NumberFormatException e) {
-            txtRes.setText("The number is invalid, please re-enter");
+            txtRes.setText("INVALID INPUT");
         }
     }
     private void intDiv() {
         String strA = txtA.getText().toString();
         String strB = txtB.getText().toString();
-
         try {
             int A = Integer.parseInt(strA);
             int B = Integer.parseInt(strB);
-            long res = (long)A / (long)B;
-            txtRes.setText(res + "");
+            try {
+                long res = (long)A / (long)B;
+                txtRes.setText(res + "");
+            } catch (ArithmeticException aExp) {
+                txtRes.setText("DIVISION BY ZERO");
+            }
         } catch (NumberFormatException e) {
-            txtRes.setText("The number is invalid, please re-enter");
+            txtRes.setText("INVALID INPUT");
         }
     }
     private void intMod() {
         String strA = txtA.getText().toString();
         String strB = txtB.getText().toString();
-
         try {
             int A = Integer.parseInt(strA);
             int B = Integer.parseInt(strB);
-            long res = (long)A % (long)B;
-            txtRes.setText(res + "");
+            try {
+                long res = (long)A / (long)B;
+                txtRes.setText(res + "");
+            } catch (ArithmeticException aExp) {
+                txtRes.setText("DIVISION BY ZERO");
+            }
         } catch (NumberFormatException e) {
-            txtRes.setText("The number is invalid, please re-enter");
+            txtRes.setText("INVALID INPUT");
         }
     }
 }
